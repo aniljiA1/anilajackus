@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Employee Directory</h1>
+    <input type="text" id="searchInput" placeholder="Search by name or email">
+  </header>
+
+  <section class="filters">
+    <input type="text" id="filterName" placeholder="First Name">
+    <input type="text" id="filterDept" placeholder="Department">
+    <input type="text" id="filterRole" placeholder="Role">
+    <button onclick="applyFilters()">Apply</button>
+    <button onclick="resetFilters()">Reset</button>
+  </section>
+
+  <section class="sort">
+    <label>Sort:</label>
+    <select id="sortOption" onchange="sortEmployees()">
+      <option value="">--Select--</option>
+      <option value="firstName">First Name</option>
+      <option value="department">Department</option>
+    </select>
+  </section>
+
+  <main id="employeeList" class="cards"></main>
+
+  <section class="add-form">
+    <h2>Add Employee</h2>
+    <form onsubmit="addEmployee(event)">
+      <input type="text" id="firstName" placeholder="First Name" required>
+      <input type="text" id="lastName" placeholder="Last Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="department" placeholder="Department" required>
+      <input type="text" id="role" placeholder="Role" required>
+      <button type="submit">Add</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
